@@ -4,69 +4,193 @@ import Nav from "./components/Nav";
 import Card from "./components/Card";
 
 export default function App() {
-  const tabs = ["Tab A", "Tab B", "Tab C"];
+  const tabs = ["Author", "Length", "Topic"];
   const [active, setActive] = useState(0);
 
-  const SAMPLE_DATA = [
+  const QUOTES = [
     [
+      //Author sort
       [
         {
-          quote: "To be, or not to be",
-          author: "Shakespeare",
-          tags: ["classic", "play"],
+          quote: "A loving heart is the truest wisdom",
+          author: "Charles Dickens",
+          tags: ["Love", "7 words"],
         },
         {
-          quote: "I think, therefore I am",
-          author: "Descartes",
-          tags: ["philosophy"],
+          quote: "We forge the chains we wear in life",
+          author: "Charles Dickens",
+          tags: ["Self Reflection", "8 words"],
+        },
+        {
+          quote: "We do not remember days, we remember moments",
+          author: "Cesare Pevese",
+          tags: ["Life", "8 words"],
         },
       ],
       [
         {
-          quote: "Simplicity is the soul of efficiency",
-          author: "Austin",
-          tags: ["design"],
+          quote:
+            "The quality, not the longevity, of one's life is what is important",
+          author: "Martin Luther King Jr.",
+          tags: ["Life", "12 words"],
+        },
+        {
+          quote:
+            "All our dreams can come true, if we have the courage to pursue them",
+          author: "Walt Disney",
+          tags: ["Dreams", "14 words"],
+        },
+        {
+          quote:
+            "The only man who never makes a mistake is the man who never does anything",
+          author: "Theodore Roosevelt",
+          tags: ["Decisiveness", "15 words"],
         },
       ],
       [
         {
-          quote: "Less but better",
-          author: "Dieter Rams",
-          tags: ["design", "ux"],
+          quote:
+            "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that",
+          author: "Martin Luther King Jr.",
+          tags: ["Love", "20 words"],
+        },
+        {
+          quote:
+            "I'm a dreamer. I have to dream and reach for the stars, and if I miss a star then I grab a handful of clouds",
+          author: "Mike Tyson",
+          tags: ["Dreams", "25 words"],
+        },
+        {
+          quote:
+            "If you could kick the person in the pants responsible for most of your trouble, you wouldn't sit for a month",
+          author: "Theodore Roosevelt",
+          tags: ["Self Reflection", "21 words"],
         },
       ],
     ],
     [
+      // Length sort
       [
         {
-          quote: "Read a thousand books",
-          author: "Proverb",
-          tags: ["reading"],
+          quote: "A loving heart is the truest wisdom",
+          author: "Charles Dickens",
+          tags: ["Love", "7 words"],
+        },
+        {
+          quote: "We forge the chains we wear in life",
+          author: "Charles Dickens",
+          tags: ["Self Reflection", "8 words"],
+        },
+        {
+          quote: "We do not remember days, we remember moments",
+          author: "Cesare Pevese",
+          tags: ["Life", "8 words"],
         },
       ],
       [
         {
-          quote: "Walk slowly but never backward",
-          author: "Someone",
-          tags: ["advice"],
+          quote:
+            "The quality, not the longevity, of one's life is what is important",
+          author: "Martin Luther King Jr.",
+          tags: ["Life", "12 words"],
+        },
+        {
+          quote:
+            "All our dreams can come true, if we have the courage to pursue them",
+          author: "Walt Disney",
+          tags: ["Dreams", "14 words"],
+        },
+        {
+          quote:
+            "The only man who never makes a mistake is the man who never does anything",
+          author: "Theodore Roosevelt",
+          tags: ["Decisiveness", "15 words"],
         },
       ],
       [
         {
-          quote: "Curiosity fuels invention",
-          author: "Inventor",
-          tags: ["innovation"],
+          quote:
+            "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that",
+          author: "Martin Luther King Jr.",
+          tags: ["Love", "20 words"],
+        },
+        {
+          quote:
+            "I'm a dreamer. I have to dream and reach for the stars, and if I miss a star then I grab a handful of clouds",
+          author: "Mike Tyson",
+          tags: ["Dreams", "25 words"],
+        },
+        {
+          quote:
+            "If you could kick the person in the pants responsible for most of your trouble, you wouldn't sit for a month",
+          author: "Theodore Roosevelt",
+          tags: ["Self Reflection", "21 words"],
         },
       ],
     ],
     [
-      [{ quote: "First card", author: "Author 1", tags: ["alpha"] }],
-      [{ quote: "Second card", author: "Author 2", tags: ["beta"] }],
-      [{ quote: "Third card", author: "Author 3", tags: ["gamma"] }],
+      // topic sort
+      [
+        {
+          quote: "A loving heart is the truest wisdom",
+          author: "Charles Dickens",
+          tags: ["Love", "7 words"],
+        },
+        {
+          quote: "We forge the chains we wear in life",
+          author: "Charles Dickens",
+          tags: ["Self Reflection", "8 words"],
+        },
+        {
+          quote: "We do not remember days, we remember moments",
+          author: "Cesare Pevese",
+          tags: ["Life", "8 words"],
+        },
+      ],
+      [
+        {
+          quote:
+            "The quality, not the longevity, of one's life is what is important",
+          author: "Martin Luther King Jr.",
+          tags: ["Life", "12 words"],
+        },
+        {
+          quote:
+            "All our dreams can come true, if we have the courage to pursue them",
+          author: "Walt Disney",
+          tags: ["Dreams", "14 words"],
+        },
+        {
+          quote:
+            "The only man who never makes a mistake is the man who never does anything",
+          author: "Theodore Roosevelt",
+          tags: ["Decisiveness", "15 words"],
+        },
+      ],
+      [
+        {
+          quote:
+            "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that",
+          author: "Martin Luther King Jr.",
+          tags: ["Love", "20 words"],
+        },
+        {
+          quote:
+            "I'm a dreamer. I have to dream and reach for the stars, and if I miss a star then I grab a handful of clouds",
+          author: "Mike Tyson",
+          tags: ["Dreams", "25 words"],
+        },
+        {
+          quote:
+            "If you could kick the person in the pants responsible for most of your trouble, you wouldn't sit for a month",
+          author: "Theodore Roosevelt",
+          tags: ["Self Reflection", "21 words"],
+        },
+      ],
     ],
   ];
 
-  const data = SAMPLE_DATA[active];
+  const data = QUOTES[active];
 
   return (
     <div className="app-root">
@@ -84,9 +208,7 @@ export default function App() {
         </div>
       </main>
 
-      <footer>
-        Template — replace SAMPLE_DATA with your own quotes & tags
-      </footer>
+      <footer>I am a friendly footer. Hello there!</footer>
     </div>
   );
 }

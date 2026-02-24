@@ -6,6 +6,11 @@
 * {
   box-sizing: border-box;
 }
+
+/* page-root element should always stretch edge‑to‑edge */
+.page-root {
+  width: 100%;
+}
 body,
 html,
 #root {

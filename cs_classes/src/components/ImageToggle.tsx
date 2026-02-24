@@ -18,7 +18,7 @@ export default function ImageToggle({
         <img src={imagePaths[index]} alt={title} className="flow-image" />
         <div className="image-button-row">
           <button className="toggle-btn" onClick={onToggle}>
-            Switch to Emphasis flow
+            Switch Emphasis/Core View
           </button>
         </div>
       </div>

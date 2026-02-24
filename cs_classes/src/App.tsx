@@ -131,9 +131,39 @@ export default function App() {
   const filteredCourses = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return courses;
-    return courses.filter((c) =>
-      (c.code + " " + c.title).toLowerCase().includes(q),
-    );
+
+    return courses.filter((c) => {
+      // basic course fields
+      if ((c.code + " " + c.title).toLowerCase().includes(q)) {
+        return true;
+      }
+
+      if (c.description.toLowerCase().includes(q)) {
+        return true;
+      }
+      if (c.hours.toLowerCase().includes(q)) {
+        return true;
+      }
+      if (c.prerequisites.toLowerCase().includes(q)) {
+        return true;
+      }
+      if (c.whenTaught.toLowerCase().includes(q)) {
+        return true;
+      }
+
+      // look inside every section field
+      if (
+        c.sections.some((s) =>
+          Object.values(s).some((v) =>
+            String(v).toLowerCase().includes(q),
+          ),
+        )
+      ) {
+        return true;
+      }
+
+      return false;
+    });
   }, [courses, query]);
 
   function handleSelectCourse(course: Course) {
@@ -160,7 +190,9 @@ export default function App() {
           <SearchBar
             value={query}
             onChange={setQuery}
-            placeholder={"Example: TTh 2PM"}
+            placeholder={
+              "Search code/title/description or days/times (e.g. TTh 2PM)"
+            }
           />
 
           <select

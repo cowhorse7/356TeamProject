@@ -38,7 +38,7 @@ const SAMPLE_COURSES = [
     description:
       "Teaches how to design, develop, reason about, and test programs. Topics include higher-order functions, object-oriented programming, recursion, algorithms, data structures, decomposition, interpreters, and regular expressions.",
     hours: "3 (lecture) credit hours, 3 class hours a week, and 2 lab hours",
-    prerequisites: "CS 10 or equivalent prior programming experience",
+    prerequisites: "None",
     whenTaught: "Fall, Winter, Spring, Summer",
     sections: [
       {
@@ -145,10 +145,10 @@ export default function App() {
       <Header />
 
       <div className="hero">
-        <h2 className="hero-title">CS Core Flowchart</h2>
+        <h2 className="hero-title">CS Major Flowchart</h2>
 
         <ImageToggle
-          title="CS Core Flowchart"
+          title="CS Major Flowchart"
           imagePaths={["/flow1.png", "/flow2.png"]} // put your two images in public/ named flow1.png, flow2.png or change paths
           index={imageIndex}
           onToggle={() => setImageIndex((i) => 1 - i)}

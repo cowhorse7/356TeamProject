@@ -9,7 +9,6 @@
 body,
 html,
 #root {
-  height: 100%;
   background-color: white;
   color: black;
   margin: 0;

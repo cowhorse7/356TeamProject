@@ -160,7 +160,7 @@ export default function App() {
           <SearchBar
             value={query}
             onChange={setQuery}
-            placeholder={"Example: TTh 2PM"}
+            placeholder={"Example: CS 111"}
           />
 
           <select
